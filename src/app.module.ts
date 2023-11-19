@@ -8,6 +8,7 @@ import { DataSource } from 'typeorm';
 import { HomeModule } from './home/home.module';
 
 import { TypeOrmConfigService } from './database/typeorm-config.service';
+import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -23,6 +24,7 @@ import { TypeOrmConfigService } from './database/typeorm-config.service';
       },
     }),
     HomeModule,
+    UsersModule,
   ],
 })
 export class AppModule {}
