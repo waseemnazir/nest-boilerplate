@@ -1,0 +1,19 @@
+version: '3'
+services:
+  api_dev:
+    container_name: api_dev
+    build:
+      context: .
+      dockerfile: Dev.Dockerfile
+    env_file:
+      - .env
+    #volumes:
+    #    - ../../devops/dev/dev.env:/usr/src/app/.env
+    networks:
+      - backend
+networks:
+  backend:
+    external: true
+    driver: bridge
+  shared:
+    driver: bridge
